@@ -1,17 +1,23 @@
 // On déclare le "Typage" -> interface/structure des données des props
 // Pour voir si cela fonction -> changer 'name: string' par 'name: number' -> une erreur apparait dans la fonction
+// Format d'un pokemon
+interface Pokemon {
+  name: string;
+  imgSrc?: string;
+}
+
+// Objet "pokemon" qui prend pour format l'interface "Pokemon"
 interface PokemonCardProps {
-  name: string,
-  imgSrc?: string
+  pokemon: Pokemon;
 }
 
 // On passe dans la fonction l'interface "Le format des données/Typages" 
-function PokemonCard( {name, imgSrc}: PokemonCardProps) {
+function PokemonCard({pokemon}: PokemonCardProps) {
 
   return (
     <figure>
-      <img src={imgSrc} alt={name}></img>
-      <figcaption>{name}</figcaption>
+      <img src={pokemon.imgSrc} alt={pokemon.name}></img>
+      <figcaption>{pokemon.name}</figcaption>
     </figure>
   );
 
