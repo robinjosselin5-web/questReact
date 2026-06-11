@@ -16,7 +16,11 @@ function PokemonCard({pokemon}: PokemonCardProps) {
 
   return (
     <figure>
-      <img src={pokemon.imgSrc} alt={pokemon.name}></img>
+      {pokemon.imgSrc ? (
+        <img src={pokemon.imgSrc} alt={pokemon.name} />
+      ) : (
+        <div>???</div>
+      )}
       <figcaption>{pokemon.name}</figcaption>
     </figure>
   );
