@@ -4,6 +4,7 @@ import { useState } from "react";
 
 import PokemonCard from "./components/PokemonCard";
 import MyTitle from "./components/MyTitle";
+import NavBar from "./components/NavBar";
 
 const pokemonList = [
   {
@@ -36,15 +37,12 @@ function App() {
   const [pokemonName, setPokemonName] = useState(pokemonList[0]);
 
   return (
-    <section>
+    <section className="flex flex-col items-center gap-4">
       <MyTitle />
+      <NavBar pokemon={pokemonList} setPokemonName={setPokemonName} />
+      
       <PokemonCard pokemon={pokemonName} />
 
-      {pokemonList.map((pokemon) =>
-        (
-          <button key={pokemon.name} type="button" onClick={() => setPokemonName(pokemon)}>{pokemon.name}</button>
-        )
-      )}
 
     </section>
   );

@@ -1,5 +1,5 @@
 function MyTitle() {
-  return <h1>Hello React</h1>;
+  return <h1 className="text-6xl">Hello Pokemon</h1>;
 }
 
 export default MyTitle;
