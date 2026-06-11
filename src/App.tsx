@@ -1,6 +1,6 @@
 import "./App.css";
 
-import { useState } from "react";
+import { useEffect, useState } from "react";
 
 import PokemonCard from "./components/PokemonCard";
 import MyTitle from "./components/MyTitle";
@@ -33,6 +33,12 @@ const pokemonList = [
 ];
 
 function App() {
+    useEffect(
+    () =>  {
+      alert("hello jeune entrepreneur :)");
+    }, 
+    []
+  );
 
   const [pokemonName, setPokemonName] = useState(pokemonList[0]);
 
@@ -42,8 +48,6 @@ function App() {
       <NavBar pokemon={pokemonList} setPokemonName={setPokemonName} />
       
       <PokemonCard pokemon={pokemonName} />
-
-
     </section>
   );
 }

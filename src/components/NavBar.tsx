@@ -14,13 +14,17 @@ interface NavBarProps {
 
 // On récupère dans les props la fonction setPokemonName et la liste des pokemons pour pouvoir les utiliser dans la fonction NavBar
 function NavBar({pokemon, setPokemonName}: NavBarProps) {
-    
+    const handleClick = () => {
+        alert("pika pikachutcutcu ta mere le pokemon");
+    };
     return (
         <nav className="flex gap-4">
             {pokemon.map((pokemon) =>
                 (
                     // Dans le "onClick" on utilise une fonction fléché pour appeler la fonction setPokemonName avec le pokemon en paramètre pour afficher le pokemon correspondant dans la carte
-                    <button className="btn btn-primary" key={pokemon.name} type="button" onClick={() => setPokemonName(pokemon)}>{pokemon.name}</button>
+                <button className="btn btn-primary" key={pokemon.name} type="button" onClick={() => {pokemon.name === "pikachu" ? handleClick(): null; setPokemonName(pokemon)}} >
+                    {pokemon.name}
+                </button>
                 )
                 )}
         </nav>
